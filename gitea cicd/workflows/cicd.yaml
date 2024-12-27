@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: docker
+    runs-on: [your-runner-tag]
 
     steps:
     - name: Checkout code
@@ -34,7 +34,7 @@ jobs:
         pytest --disable-warnings                
 
   build-and-push-docker:
-    runs-on: docker
+    runs-on: [your-runner-tag]
     needs: build-and-test
     steps:
     - name: Checkout code
