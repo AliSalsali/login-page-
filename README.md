@@ -59,7 +59,7 @@ To enable the execution of CI/CD workflows with Gitea, you need to install and c
 
 #### 1. Download the Gitea Runner Binary
 Download the latest Gitea Runner binary for your OS from the official Gitea releases page:  
-👉 [Gitea Releases - Runner](https://github.com/go-gitea/runner/releases)
+👉 [Gitea Releases - Runner](https://docs.gitea.com/installation/install-from-binary)
 
 #### 2. Install the Runner
 Extract the binary and move it to a directory in your system's `PATH` (e.g., `/usr/local/bin`):
@@ -90,7 +90,7 @@ After registration, start the runner:
 ```bash
 gitea-runner daemon
 ```
-To set up the runner as a system service, refer to the [official Gitea Runner documentation](https://docs.gitea.io/en-us/act_runner/) for additional instructions.
+To set up the runner as a system service, refer to the [official Gitea Runner documentation](https://docs.gitea.com/usage/actions/act-runner) for additional instructions.
 
 ---
 
