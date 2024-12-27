@@ -89,4 +89,8 @@ def get_permissions(token: str = Depends(oauth2_scheme), db: Session = Depends(g
     db_user = db.query(User).filter(User.username == username).first()
     if not db_user:
         raise HTTPException(status_code=403, detail="User not found")
+<<<<<<< HEAD
     return {"permissions": db_user.permissions}
+=======
+    return {"permissions": db_user.permissions}
+>>>>>>> b48e4fbd6a020c23ade97216d93eeeeae20ad2bc
