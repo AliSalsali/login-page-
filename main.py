@@ -7,7 +7,6 @@ from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 
-# ======== تنظیمات دیتابیس ========
 DATABASE_URL = "sqlite:///./test.db"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -29,7 +28,6 @@ def get_db():
     finally:
         db.close()
 
-# ======== ابزارهای امنیتی و JWT ========
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 SECRET_KEY = "911d0fb879e207d413d4534e4160abedbdb9afec7cc0b55120c59680f21ce8c1"
@@ -50,7 +48,6 @@ def decode_access_token(token: str):
     except JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
 
-# ======== مدل‌های Pydantic ========
 class UserRegister(BaseModel):
     username: str
     password: str
@@ -59,7 +56,6 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
-# ======== برنامه FastAPI ========
 app = FastAPI()
 
 @app.post("/register")
